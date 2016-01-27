@@ -24,17 +24,42 @@ angular.module('uiFormatApp')
   .config(function($stateProvider, $urlRouterProvider) {
 
 
-	$urlRouterProvider.otherwise("/event_list");
+	$urlRouterProvider.otherwise("/event/list");
 
 	$stateProvider
-	.state('/event_list', {
-		url: "/event_list",
+	.state('/event_layout', {
+		url: "/event",
 		views:{
+			
 			"RootView":{
-			templateUrl: 'views/event_list.html',
-			controller: 'EventListCtrl'
+			templateUrl: 'views/event/event_layout.html',
+			controller: 'EventFilterCtrl'
 			}
 		}
 	})
+	.state('/event_layout.list', {
+		url: "/list",
+		views:{
+			"event_main":{
+			templateUrl: 'views/event/event_list.html',
+			controller: 'EventListCtrl'
+			},
+			"event_right":{
+			templateUrl: 'views/right_column_ad.html'
+			}
+		}
+	})
+	.state('/event_layout.calendar', {
+		url: "/calendar",
+		views:{
+			"event_main":{
+			templateUrl: 'views/event/event_calendar.html',
+			controller: 'EventCalendarCtrl'
+			},
+			"event_right":{
+			template: '<div style="dieplay:none"></div>'
+			}
+		}
+	});
 
 });

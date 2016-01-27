@@ -4,6 +4,6 @@ angular.module('uiFormatApp')
   .controller('EventListCtrl', function ($scope) {
 
 
-  	$scope.name = "yuta";
+  	$scope.name = "event list yuta";
 
   });
