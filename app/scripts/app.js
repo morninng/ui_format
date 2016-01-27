@@ -1,3 +1,4 @@
+
 'use strict';
 
 /**
@@ -14,5 +15,26 @@ angular
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.router'
   ]);
+
+
+angular.module('uiFormatApp')
+  .config(function($stateProvider, $urlRouterProvider) {
+
+
+	$urlRouterProvider.otherwise("/event_list");
+
+	$stateProvider
+	.state('/event_list', {
+		url: "/event_list",
+		views:{
+			"RootView":{
+			templateUrl: 'views/event_list.html',
+			controller: 'EventListCtrl'
+			}
+		}
+	})
+
+});
