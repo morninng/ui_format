@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('uiFormatApp')
-  .controller('EventListCtrl', function ($scope) {
+  .controller('EventListCtrl',['$scope', function ($scope) {
 
 
   	$scope.name = "event list yuta";
 
-  });
+  }]);

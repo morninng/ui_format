@@ -8,10 +8,10 @@
  * Controller of the uiFormatApp
  */
 angular.module('uiFormatApp')
-  .controller('MainCtrl', function () {
+  .controller('MainCtrl',[ function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-  });
+  }]);

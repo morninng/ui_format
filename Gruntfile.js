@@ -481,3 +481,47 @@ module.exports = function (grunt) {
     'build'
   ]);
 };
+
+
+
+
+module.exports = function (grunt2) {
+
+  grunt2.loadNpmTasks('grunt-contrib-concat');
+  grunt2.loadNpmTasks('grunt-contrib-uglify');
+  grunt2.loadNpmTasks('grunt-ftp-deploy');
+
+  grunt2.initConfig({
+
+    'concat': {
+      files: {
+        src: ['./app/scripts/*.js', './app/scripts/controllers/*.js'],
+        dest: './app/script_mini/mixidea.js',
+      }
+    },
+
+    'uglify': {
+      dist: {
+        files: {
+          './app/script_mini/mixidea-mini.js': './app/script_mini/mixidea.js'
+        }
+      }
+    },
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: 'webdemo.dac.co.jp',
+          port: 21,
+          authKey: 'key1'
+        },
+        src: './app',
+        dest: '/public_html/mixidea/angular/ui_format/app',
+        exclusions: ['./app/.sass-cache']
+      }
+    }
+
+  });
+
+  grunt2.registerTask('deploy',['concat', 'uglify','ftp-deploy']);
+
+}

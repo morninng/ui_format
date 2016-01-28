@@ -63,3 +63,51 @@ angular.module('uiFormatApp')
 	});
 
 }]);
+'use strict';
+
+angular.module('uiFormatApp')
+  .controller('EventCalendarCtrl',['$scope', function ($scope) {
+
+
+  	$scope.name = "event calendar yuta";
+
+  }]);
+
+'use strict';
+
+angular.module('uiFormatApp')
+  .controller('EventFilterCtrl',['$scope', function ($scope) {
+
+
+  	$scope.name = "event filter yuta";
+
+  }]);
+  
+
+'use strict';
+
+angular.module('uiFormatApp')
+  .controller('EventListCtrl',['$scope', function ($scope) {
+
+
+  	$scope.name = "event list yuta";
+
+  }]);
+
+'use strict';
+
+/**
+ * @ngdoc function
+ * @name uiFormatApp.controller:MainCtrl
+ * @description
+ * # MainCtrl
+ * Controller of the uiFormatApp
+ */
+angular.module('uiFormatApp')
+  .controller('MainCtrl',[ function () {
+    this.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
+  }]);
