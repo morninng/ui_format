@@ -9,12 +9,6 @@
 
 module.exports = function (grunt) {
 
-
-
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-ftp-deploy');
-
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
@@ -36,34 +30,6 @@ module.exports = function (grunt) {
 
     // Project settings
     yeoman: appConfig,
-
-    concat: {
-      files: {
-        src: ['./app/scripts/*.js', './app/scripts/controllers/*.js'],
-        dest: './app/script_mini/mixidea.js',
-      }
-    },
-
-    uglify: {
-      dist: {
-        files: {
-          './app/script_mini/mixidea-mini.js': './app/script_mini/mixidea.js'
-        }
-      }
-    },
-    'ftp-deploy': {
-      build: {
-        auth: {
-          host: 'webdemo.dac.co.jp',
-          port: 21,
-          authKey: 'key1'
-        },
-        src: './app',
-        dest: '/public_html/mixidea/angular/ui_format/app',
-        exclusions: ['./app/.sass-cache']
-      }
-    },
-
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -515,13 +481,51 @@ module.exports = function (grunt) {
     'build'
   ]);
 
-  grunt.registerTask('deploy', function(){
-    grunt.log.writeln("aaa");
-  });
 
 
-  grunt.registerTask('deploy2',['concat','uglify','ftp-deploy']);
 
 };
 
 
+
+
+module.exports = function (grunt2) {
+
+  grunt2.loadNpmTasks('grunt-contrib-concat');
+  grunt2.loadNpmTasks('grunt-contrib-uglify');
+  grunt2.loadNpmTasks('grunt-ftp-deploy');
+
+  grunt2.initConfig({
+
+    'concat': {
+      files: {
+        src: ['./app/scripts/*.js', './app/scripts/controllers/*.js'],
+        dest: './app/script_mini/mixidea.js',
+      }
+    },
+
+    'uglify': {
+      dist: {
+        files: {
+          './app/script_mini/mixidea-mini.js': './app/script_mini/mixidea.js'
+        }
+      }
+    },
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: 'webdemo.dac.co.jp',
+          port: 21,
+          authKey: 'key1'
+        },
+        src: './app',
+        dest: '/public_html/mixidea/angular/ui_format/app',
+        exclusions: ['./app/.sass-cache']
+      }
+    }
+
+  });
+
+  grunt2.registerTask('deploy',['concat', 'uglify','ftp-deploy']);
+
+}

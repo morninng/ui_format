@@ -60,9 +60,27 @@ angular.module('uiFormatApp')
 			template: '<div style="dieplay:none"></div>'
 			}
 		}
+	})
+	.state('/article_layout', {
+		
+		templateUrl: 'views/article_layout.html',
+		controller: 'ArticleLayoutCtrl'
+
+
 	});
 
 }]);
+'use strict';
+
+angular.module('uiFormatApp')
+  .controller('ArticleLayoutCtrl',[ "@scope",function ($scope) {
+
+  	$scope.name = "kk";
+
+
+
+  }]);
+
 'use strict';
 
 angular.module('uiFormatApp')

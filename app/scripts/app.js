@@ -30,7 +30,6 @@ angular.module('uiFormatApp')
 	.state('/event_layout', {
 		url: "/event",
 		views:{
-			
 			"RootView":{
 			templateUrl: 'views/event/event_layout.html',
 			controller: 'EventFilterCtrl'
@@ -60,6 +59,17 @@ angular.module('uiFormatApp')
 			template: '<div style="dieplay:none"></div>'
 			}
 		}
+	})
+	.state('/article_layout', {
+		url:"/article",
+		views: {
+			"RootView":{
+			templateUrl: 'views/article_layout.html',
+			controller: 'ArticleLayoutCtrl'
+			}
+		}
+
+
 	});
 
 }]);
