@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AACA,gBAAiB;EACjB,OAAO,EAAE,eAAe;EACxB,OAAO,EAAE,YAAY;EACrB,OAAO,EAAE,WAAW;EACpB,OAAO,EAAE,UAAU;EACnB,OAAO,EAAE,OAAO;EAChB,OAAO,EAAE,IAAI",
+"sources": ["../sass/_event_list.scss"],
+"names": [],
+"file": "marge.css"
+}
