@@ -61,7 +61,7 @@ angular.module('uiFormatApp')
 		}
 	})
 	.state('/article_layout', {
-		url:"/article",
+		url:"/article/:game_id",
 		views: {
 			"RootView":{
 			templateUrl: 'views/article_layout.html',
@@ -70,7 +70,7 @@ angular.module('uiFormatApp')
 		}
 	})
 	.state('/article_layout.arguments', {
-		url:"/argument/:id",
+		url:"/argument/",
 		views: {
 			"article_view":{
 			templateUrl: 'views/arguments.html',
@@ -79,19 +79,14 @@ angular.module('uiFormatApp')
 		}
 	})
 	.state('/article_layout.audio_transcript', {
-		url:"/audio/:id",
+		url:"/audio/",
 		views: {
 			"article_view":{
 			templateUrl: 'views/audio_transcript.html',
 			controller: 'AudioTranscriptCtrl'
 			}
 		}
-	})
-
-
-
-
-	;
+	});
 
 }]);
 'use strict';
@@ -99,7 +94,7 @@ angular.module('uiFormatApp')
 angular.module('uiFormatApp')
   .controller('ArgumentsCtrl',['$scope','$stateParams', function ($scope, $stateParams) {
     $scope.name = "sss";
-    $scope.game_id = $stateParams.id;
+    $scope.game_id = $stateParams.game_id;
 
   }]);
 
@@ -107,9 +102,11 @@ angular.module('uiFormatApp')
 'use strict';
 
 angular.module('uiFormatApp')
-  .controller('ArticleLayoutCtrl',[ '$scope',function ($scope) {
+  .controller('ArticleLayoutCtrl',[ '$scope','$stateParams',function ($scope, $stateParams) {
 
   	$scope.name = "kk";
+    $scope.game_id = $stateParams.game_id;
+    console.log("layout id" + $scope.game_id);
 
 
 
@@ -118,13 +115,13 @@ angular.module('uiFormatApp')
 'use strict';
 
 angular.module('uiFormatApp')
-  .controller('AudioTranscriptCtrl', function ($scope) {
+  .controller('AudioTranscriptCtrl',['$scope','$stateParams', function ($scope, $stateParams) {
  
- 	s@sxo "article_view": !"::::::::::::::::"
-
+    $scope.game_id = $stateParams.game_id;
 
     $scope.name = "sssssssssssss";
-  });
+
+  }]);
 
 'use strict';
 
