@@ -30,7 +30,6 @@ angular.module('uiFormatApp')
 	.state('/event_layout', {
 		url: "/event",
 		views:{
-			
 			"RootView":{
 			templateUrl: 'views/event/event_layout.html',
 			controller: 'EventFilterCtrl'
@@ -62,24 +61,70 @@ angular.module('uiFormatApp')
 		}
 	})
 	.state('/article_layout', {
-		
-		templateUrl: 'views/article_layout.html',
-		controller: 'ArticleLayoutCtrl'
+		url:"/article",
+		views: {
+			"RootView":{
+			templateUrl: 'views/article_layout.html',
+			controller: 'ArticleLayoutCtrl'
+			}
+		}
+	})
+	.state('/article_layout.arguments', {
+		url:"/argument/:id",
+		views: {
+			"article_view":{
+			templateUrl: 'views/arguments.html',
+			controller: 'ArgumentsCtrl'
+			}
+		}
+	})
+	.state('/article_layout.audio_transcript', {
+		url:"/audio/:id",
+		views: {
+			"article_view":{
+			templateUrl: 'views/audio_transcript.html',
+			controller: 'AudioTranscriptCtrl'
+			}
+		}
+	})
 
 
-	});
+
+
+	;
 
 }]);
 'use strict';
 
 angular.module('uiFormatApp')
-  .controller('ArticleLayoutCtrl',[ "@scope",function ($scope) {
+  .controller('ArgumentsCtrl',['$scope','$stateParams', function ($scope, $stateParams) {
+    $scope.name = "sss";
+    $scope.game_id = $stateParams.id;
+
+  }]);
+
+
+'use strict';
+
+angular.module('uiFormatApp')
+  .controller('ArticleLayoutCtrl',[ '$scope',function ($scope) {
 
   	$scope.name = "kk";
 
 
 
   }]);
+
+'use strict';
+
+angular.module('uiFormatApp')
+  .controller('AudioTranscriptCtrl', function ($scope) {
+ 
+ 	s@sxo "article_view": !"::::::::::::::::"
+
+
+    $scope.name = "sssssssssssss";
+  });
 
 'use strict';
 

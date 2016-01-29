@@ -68,8 +68,29 @@ angular.module('uiFormatApp')
 			controller: 'ArticleLayoutCtrl'
 			}
 		}
+	})
+	.state('/article_layout.arguments', {
+		url:"/argument/:id",
+		views: {
+			"article_view":{
+			templateUrl: 'views/arguments.html',
+			controller: 'ArgumentsCtrl'
+			}
+		}
+	})
+	.state('/article_layout.audio_transcript', {
+		url:"/audio/:id",
+		views: {
+			"article_view":{
+			templateUrl: 'views/audio_transcript.html',
+			controller: 'AudioTranscriptCtrl'
+			}
+		}
+	})
 
 
-	});
+
+
+	;
 
 }]);

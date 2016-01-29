@@ -515,12 +515,13 @@ module.exports = function (grunt) {
     'build'
   ]);
 
+/*
   grunt.registerTask('deploy', function(){
     grunt.log.writeln("aaa");
   });
+*/
 
-
-  grunt.registerTask('deploy2',['concat','uglify','ftp-deploy']);
+  grunt.registerTask('deploy',['concat','uglify','ftp-deploy']);
 
 };
 

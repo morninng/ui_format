@@ -2,8 +2,15 @@
 
 
 
-<input type="button" value = "discussion">
-<input type="button" value = "audio transcript">
+<div>
+	<a ui-sref=".arguments({id:1000})"> argument </a>
+</div>
+<div>
+	<a ui-sref=".audio_transcript({id:1000})"> Speech Audio </a>
+</div>
 
 
 {{name}}
+
+<div ui-view="article_view" style="background-color:#FFEFD5"></div>
+
