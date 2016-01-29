@@ -1,0 +1,41 @@
+
+
+$article_active_pain_color :#F0F8FF;
+
+#article_tab_container{
+
+	border-bottom:solid;
+	border-width: 3px;
+
+	.each_tab_container{
+		margin: 0px;
+		padding-left:40px;
+		padding-right:20px;
+		text-align:center;
+	}
+
+	.active_tab{
+		background-color:$article_active_pain_color;
+		border-bottom-color:transparent;
+		margin-bottom:-3px;
+	}
+
+	.article_tab{
+		border-style:solid;
+		border-width: 3px;
+		border-radius:8px 8px 0 0;
+		width:90%;
+		margin-left:auto;
+		margin-right:auto;
+		text-align: center;
+		font-size: large;
+		margin-bottom: -3px;
+		position: relative;
+	}
+
+}
+
+
+#article_view_container{
+	background-color:$article_active_pain_color;	
+}

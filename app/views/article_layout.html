@@ -1,15 +1,22 @@
 <p>This is the article_layout view.</p>
 
 
+<div class="row" id="article_tab_container">
+	<div class="each_tab_container col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		<div class="article_tab" ui-sref-active="active_tab">
+			<a ui-sref=".arguments"> argument </a>
+		</div>
+	</div>
+	<div class="each_tab_container col-xs-6 col-sm-6 col-md-6 col-lg-6">
+		<div class="article_tab" ui-sref-active="active_tab">
+			<a ui-sref=".audio_transcript"> Speech </a>
+		</div>
+	</div>
+</div>
 
-<div>
-	<a ui-sref=".arguments"> argument </a>
-</div>
-<div>
-	<a ui-sref=".audio_transcript"> Speech Audio </a>
-</div>
+
+<div ui-view="article_view" id="article_view_container"></div>
+
 
 article layout : {{game_id}}
-
-<div ui-view="article_view" style="background-color:#FFEFD5"></div>
 
