@@ -61,7 +61,7 @@ angular.module('uiFormatApp')
 		}
 	})
 	.state('/article_layout', {
-		url:"/article",
+		url:"/article/:game_id",
 		views: {
 			"RootView":{
 			templateUrl: 'views/article_layout.html',
@@ -70,7 +70,7 @@ angular.module('uiFormatApp')
 		}
 	})
 	.state('/article_layout.arguments', {
-		url:"/argument/:id",
+		url:"/argument/",
 		views: {
 			"article_view":{
 			templateUrl: 'views/arguments.html',
@@ -79,18 +79,13 @@ angular.module('uiFormatApp')
 		}
 	})
 	.state('/article_layout.audio_transcript', {
-		url:"/audio/:id",
+		url:"/audio/",
 		views: {
 			"article_view":{
 			templateUrl: 'views/audio_transcript.html',
 			controller: 'AudioTranscriptCtrl'
 			}
 		}
-	})
-
-
-
-
-	;
+	});
 
 }]);
